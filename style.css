@@ -1,0 +1,52 @@
+h1{
+
+}
+
+h2{
+    font-size: 20px;
+}
+
+h3{
+    font-size: 10px;
+}
+
+p{
+
+}
+
+.mainheader{
+    display:inline-flex;
+    background-color: #464646;
+    border-radius: 5px;
+    color: #FFFFFF;
+    text-align: center;
+    justify-content: center;
+    width: 180px;
+    height: 30px;
+}
+
+.Inside{
+    display: inline-flex;
+    background-color: #464646;
+    border-radius: 5px;
+}
+
+.image{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.desc{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    letter-spacing: 2px;
+    word-spacing: 0px;
+    color: #FFFFFF;
+    font-weight: 400;
+    text-decoration: none;
+    font-style: italic;
+    font-variant: normal;
+    text-transform: none;
+}

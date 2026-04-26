@@ -1,5 +1,16 @@
+/* Accessibility-Focused Color Scheme with Pastel Colors */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body{
-    background-color: #1a1a1a;
+    /* Light, accessible background for better readability */
+    background-color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #2c3e50;
 }
 
 h1{
@@ -20,9 +31,10 @@ p{
 
 .mainheader{
     display:inline-flex;
-    background-color: #464646;
+    /* Pastel purple background for inclusive design */
+    background-color: #d4b5e8;
     border-radius: 5px;
-    color: #FFFFFF;
+    color: #333333;
     text-align: center;
     justify-content: center;
     width: 180px;
@@ -31,7 +43,8 @@ p{
 
 .Inside{
     display: inline-flex;
-    background-color: #464646;
+    /* Pastel blue background for card elements */
+    background-color: #c6e5f5;
     border-radius: 5px;
     flex-direction: column;
     width: 276px;
@@ -51,13 +64,15 @@ p{
     font-size: 10px;
     letter-spacing: 2px;
     word-spacing: 0px;
-    color: #000;
+    /* Dark text for accessibility */
+    color: #333333;
     font-weight: 400;
     text-decoration: none;
     font-style: italic;
     font-variant: normal;
     text-transform: none;
-    background-color: #bebebe;
+    /* Pastel green background for text areas */
+    background-color: #d4f0e3;
     text-align: center;
     justify-content: center;
     width: 169px;
@@ -83,13 +98,15 @@ p{
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    background-color: #2c2c2c;
+    /* Pastel pink background for navbar */
+    background-color: #f5d9e6;
 }
 
 .services{
     background: none;
     border: none;
-    color: #FFFFFF;
+    /* Dark text for visibility on light background */
+    color: #2c3e50;
     position: relative;
     cursor: pointer;
 }
@@ -97,7 +114,7 @@ p{
 .about{
     background: none;
     border: none;
-    color: #FFFFFF;
+    color: #2c3e50;
     position: relative;
     cursor: pointer;
 }
@@ -105,7 +122,7 @@ p{
 .settings{
     background: none;
     border: none;
-    color: #FFFFFF;
+    color: #2c3e50;
     position: relative;
     cursor: pointer;
 }
@@ -113,7 +130,7 @@ p{
 .help{
     background: none;
     border: none;
-    color: #FFFFFF;
+    color: #2c3e50;
     position: relative;
     cursor: pointer;
 }
@@ -125,7 +142,8 @@ p{
     bottom: -2px;
     width: 0;
     height: 2px;
-    background-color: #FFFFFF;
+    /* Darker underline for visibility */
+    background-color: #5a7c8c;
     transition: width 0.3s ease;
 }
 .services:hover::after {
@@ -140,7 +158,7 @@ p{
     bottom: -2px;
     width: 0;
     height: 2px;
-    background-color: #FFFFFF;
+    background-color: #5a7c8c;
     transition: width 0.3s ease;
 }
 .about:hover::after {
@@ -155,7 +173,7 @@ p{
     bottom: -2px;
     width: 0;
     height: 2px;
-    background-color: #FFFFFF;
+    background-color: #5a7c8c;
     transition: width 0.3s ease;
 }
 .settings:hover::after{
@@ -170,7 +188,7 @@ p{
     bottom: -2px;
     width: 0;
     height: 2px;
-    background-color: #FFFFFF;
+    background-color: #5a7c8c;
     transition: width 0.3s ease;
 }
 .help:hover::after {
@@ -192,17 +210,18 @@ p{
     padding: 0 16px 0 40px;
     font-size: 16px;
   
-    background: #464646;
-    color: white;
+    /* Light background with dark text for accessibility */
+    background: #ffffff;
+    color: #2c3e50;
   
-    border: 1px solid #464646;
+    border: 1px solid #d4b5e8;
     border-radius: 4px;
     outline: none;
     box-sizing: border-box;
 }
 
 .search-wrapper input::placeholder {
-    color: #cfcfcf;
+    color: #999999;
 }
 
 .search-wrapper .icon {
@@ -215,10 +234,10 @@ p{
 .search-wrapper .icon svg {
     width: 14px;
     height: 14px;
-    fill: #cfcfcf;
+    fill: #999999;
 }
 
 .search-wrapper input:focus {
-    border-color: #ffffff;
-    box-shadow: 0 0 0 2px rgba(255,255,255,0.2);
+    border-color: #d4b5e8;
+    box-shadow: 0 0 0 2px rgba(212, 181, 232, 0.3);
 }

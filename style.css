@@ -432,10 +432,12 @@ p{
 }
 
 .settingpanel{
-    background-color: #464646;
+    display: flex;
     border-radius: 10px;
     width: 300px;
     height: 200px;
+    flex-direction: row;
+    gap: 10px;
 }
 
 .settingcolor{
@@ -450,7 +452,7 @@ p{
     border-radius: 3px;
     width: 70px;
     height: 30px;
-    
+    font-weight: bold;
 }
 
 .dark{
@@ -460,4 +462,25 @@ p{
     width: 70px;
     height: 30px;
     color: #F9FFF3;
+    font-weight: bold;
+}
+
+.setting1{
+    background-color: #464646;
+    border-radius: 10px;
+}
+
+.setting2{
+    background-color: #464646;
+    border-radius: 10px;
+}
+
+.language{
+    background-color: #1a1a1a;
+    border: none;
+    border-radius: 3px;
+    width: 70px;
+    height: 30px;
+    color: #F9FFF3;
+    font-weight: bold;
 }

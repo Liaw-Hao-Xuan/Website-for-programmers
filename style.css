@@ -463,12 +463,23 @@ p{
     background-color: #FFFFFF;
     border: none;
     border-radius: 2px;
-
 }
 
 .dark{
     background-color: #000;
     color: #FFFFFF;
+    border: none;
+    border-radius: 2px;
+}
+
+.deactivate{
+    background-color: #FFFFFF;
+    border: none;
+    border-radius: 2px;
+}
+
+.delete{
+    background-color: ;
     border: none;
     border-radius: 2px;
 }

@@ -431,57 +431,44 @@ p{
     }
 }
 
-.settingpanel{
-    display: flex;
+.setting{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    margin-bottom: 30px;
+    background-color: #1a1a1a;;
     border-radius: 10px;
-    width: 300px;
-    height: 200px;
-    flex-direction: row;
-    gap: 10px;
 }
 
-.settingcolor{
+.appearance{
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
+.section {
+    margin: 5px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #464646;
+    min-height: 160px;
+    max-height: 300px;
+}
+
+.modes{
+    width: 50px;
+}
+
 .light{
-    background-color: #F9FFF3;
+    background-color: #FFFFFF;
     border: none;
-    border-radius: 3px;
-    width: 70px;
-    height: 30px;
-    font-weight: bold;
+    border-radius: 2px;
+
 }
 
 .dark{
-    background-color: #1a1a1a;
+    background-color: #000;
+    color: #FFFFFF;
     border: none;
-    border-radius: 3px;
-    width: 70px;
-    height: 30px;
-    color: #F9FFF3;
-    font-weight: bold;
-}
-
-.setting1{
-    background-color: #464646;
-    border-radius: 10px;
-    
-}
-
-.setting2{
-    background-color: #464646;
-    border-radius: 10px;
-}
-
-.language{
-    background-color: #1a1a1a;
-    border: none;
-    border-radius: 3px;
-    width: 70px;
-    height: 30px;
-    color: #F9FFF3;
-    font-weight: bold;
+    border-radius: 2px;
 }

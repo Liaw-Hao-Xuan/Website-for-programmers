@@ -34,39 +34,109 @@
           </div>
     </nav>
 
-    <div class="maindiv">
-        <h2 class="mainheader">Settings</h2>
-    </div>
 
-    <div class="settingpanel">
-        <div class="setting1">
-            <div class="settingheader">
-                <h2>Color options</h2>
-            </div>
-
-            <div class="settingcolor">
-                <button class="light">Light tone</button>
-                <button class="dark">Dark tone</button>
+    <main class="setting">
+        <div class="section">
+            <h2>Appearance</h2>
+            <p>Select your preferred theme:</p>
+            <div class="modes">
+                <button class="light">Light Mode</button>
+                <button class="dark">Dark Mode</button>
             </div>
         </div>
 
-        <div class="setting2">
-            <div class="settingheader">
-                <h2>User preferences</h2>
+        <div class="section">
+            <h2>User Preferences</h2>
+
+            <div>
+                <h3>Language</h3>
+                <button>Change Language</button>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Account Settings</h2>
+
+            <div>
+                <h3>Profile Information</h3>
+                <form>
+                    <label for="name">Name:</label><br>
+                    <input type="text" id="name" name="name"><br><br>
+
+                    <label for="email">Email:</label><br>
+                    <input type="email" id="email" name="email"><br><br>
+
+                    <button type="submit">Save Changes</button>
+                </form>
             </div>
 
             <div>
-                <div>
-                    <button class="language">Change language</button>
-                </div>
+                <h3>Password</h3>
+                <form>
+                    <label for="current-password">Current Password:</label><br>
+                    <input type="password" id="current-password"><br><br>
+
+                    <label for="new-password">New Password:</label><br>
+                    <input type="password" id="new-password"><br><br>
+
+                    <button type="submit">Update Password</button>
+                </form>
             </div>
         </div>
-    </div>
+
+        <div class="section">
+            <h2>Notifications</h2>
+
+            <div>
+                <input type="checkbox" id="email-notifications">
+                <label for="email-notifications">Email Notifications</label>
+            </div>
+
+            <div>
+                <input type="checkbox" id="sms-notifications">
+                <label for="sms-notifications">SMS Notifications</label>
+            </div>
+
+            <div>
+                <input type="checkbox" id="push-notifications">
+                <label for="push-notifications">Push Notifications</label>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Privacy Settings</h2>
+
+            <div>
+                <input type="checkbox" id="profile-visibility">
+                <label for="profile-visibility">Make profile public</label>
+            </div>
+
+            <div>
+                <input type="checkbox" id="data-sharing">
+                <label for="data-sharing">Allow data sharing for analytics</label>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Danger Zone</h2>
+
+            <div>
+                <button>Deactivate Account</button>
+            </div>
+
+            <div>
+                <button>Delete Account</button>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <nav>
+            <a href="#">Privacy Policy</a> |
+            <a href="#">Terms of Service</a>
+        </nav>
+    </footer>
 
 </body>
-
-<footer>
-
-</footer>
-
 </html>

@@ -1,0 +1,168 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    background:#1a1a1a;
+
+    overflow-x:hidden;
+    overflow-y:auto;
+}
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    background:#2c2c2c;
+    padding:15px 20px;
+}
+
+.navitems{
+    display:flex;
+    gap:20px;
+}
+
+.navitems a{
+    color:white;
+    text-decoration:none;
+}
+
+.search-wrapper{
+    position:relative;
+    width:250px;
+}
+
+.search-wrapper input{
+    width:100%;
+    padding:10px 10px 10px 40px;
+
+    background:#444;
+    border:none;
+    border-radius:5px;
+
+    color:white;
+}
+
+.search-wrapper .icon{
+    position:absolute;
+    left:10px;
+    top:50%;
+    transform:translateY(-50%);
+}
+
+.main-layout{
+    display:flex;
+    height:calc(100vh - 80px);
+}
+
+#websitePreview{
+    flex:1;
+    background:white;
+
+    padding:20px;
+
+    overflow:auto;
+}
+
+.floating-code-container{
+    position:fixed;
+
+    top:100px;
+    right:20px;
+
+    width:360px;
+    height:420px;
+
+    background:#0d1117;
+
+    border:1px solid #30363d;
+    border-radius:10px;
+
+    display:flex;
+    flex-direction:column;
+
+    z-index:9999;
+
+    box-shadow:0 10px 30px rgba(0,0,0,0.5);
+}
+
+.floating-header{
+    background:#161b22;
+    padding:10px;
+    cursor:move;
+}
+
+.editor-tabs{
+    display:flex;
+    gap:10px;
+}
+
+.editor-tab{
+    background:#2c2c2c;
+    color:white;
+
+    border:none;
+    padding:6px 12px;
+
+    border-radius:5px;
+    cursor:pointer;
+}
+
+.editor-tab.active{
+    background:#238636;
+}
+
+.editor-scroll-area{
+    flex:1;
+}
+
+.floating-code-panel{
+    display:none;
+    height:100%;
+}
+
+.floating-code-panel.active{
+    display:block;
+}
+
+textarea{
+    width:100%;
+    height:100%;
+
+    background:#0d1117;
+    color:#c9d1d9;
+
+    border:none;
+    outline:none;
+
+    padding:10px;
+
+    font-family:monospace;
+    border:1px solid #0d1117;
+}
+
+.run-button{
+    background:#238636;
+    color:white;
+
+    border:none;
+    padding:10px;
+
+    cursor:pointer;
+}
+
+.run-button:hover{
+    background:#2ea043;
+}
+
+@media(max-width:768px){
+    .floating-code-container{
+        width:90%;
+        height:380px;
+        right:5%;
+    }
+}

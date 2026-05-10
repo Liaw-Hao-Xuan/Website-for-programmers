@@ -4,136 +4,258 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale = 1.0">
+
     <title>Settings</title>
+
+    <link rel="stylesheet" href="setting.css">
 </head>
 
 <body>
 
     <nav class="navbar">
+
         <div class="logo">
-            <a href="index.html"><img src="assets/testimage.png" alt="Logo" width="56" height="41"></a>
+            <a href="index.html">
+                <img src="assets/testimage.png" alt="Logo" width="56" height="41">
+            </a>
         </div>
 
         <div class="navitems">
-            <a href="services.html" class="services">Services</a>
-            <a href="about.html" class="about">About</a>
+            <a href="services.html">Services</a>
+            <a href="about.html">About</a>
             <a href="settings.html" class="settings">Settings</a>
-            <a href="help.html" class="help">Help</a>
+            <a href="help.html">Help</a>
         </div>
 
         <div class="search-wrapper">
             <span class="icon">
-              <svg viewBox="0 0 24 24">
-                <path d="M10 2a8 8 0 105.293 14.293l4.707 4.707 1.414-1.414-4.707-4.707A8 8 0 0010 2zm0 2a6 6 0 110 12A6 6 0 0110 4z"/>
-              </svg>
+                <svg viewBox="0 0 24 24">
+                    <path d="M10 2a8 8 0 105.293 14.293l4.707 4.707 1.414-1.414-4.707-4.707A8 8 0 0010 2zm0 2a6 6 0 110 12A6 6 0 0110 4z"/>
+                </svg>
             </span>
+
             <input type="text" placeholder="Search...">
-          </div>
+        </div>
+
     </nav>
 
+    <main class="settings-page">
 
-    <main class="setting">
-        <div class="section">
-            <h2>Appearance</h2>
-            <p>Select your preferred theme:</p>
-            <div class="modes">
-                <button class="light">Light Mode</button>
-                <button class="dark">Dark Mode</button>
-            </div>
+        <div class="page-header">
+            <h1>Settings</h1>
+            <p>Manage your account preferences, appearance, privacy, and notifications.</p>
         </div>
 
-        <div class="section">
-            <h2>User Preferences</h2>
+        <div class="settings-grid">
+            <aside class="sidebar">
 
-            <div>
-                <h3>Language</h3>
-                <button>Change Language</button>
-            </div>
-        </div>
+                <div class="profile-box">
+                    <div class="avatar">?</div>
+                
+                    <div>
+                        <h3>Unknown User</h3>
+                    </div>
+                </div>
 
-        <div class="section">
-            <h2>Account Settings</h2>
+                <div class="sidebar-links">
+                    <a href="#" class="active">General</a>
+                    <a href="#">Account</a>
+                    <a href="#">Appearance</a>
+                    <a href="#">Notifications</a>
+                    <a href="#">Privacy</a>
+                    <a href="#">Security</a>
+                </div>
 
-            <div>
-                <h3>Profile Information</h3>
-                <form>
-                    <label for="name">Name:</label><br>
-                    <input type="text" id="name" name="name"><br><br>
+            </aside>
 
-                    <label for="email">Email:</label><br>
-                    <input type="email" id="email" name="email"><br><br>
+            <section class="content">
+                <div class="section">
 
-                    <button type="submit">Save Changes</button>
-                </form>
-            </div>
+                    <div class="section-header">
+                        <h2>Appearance</h2>
+                        <p>Customize the look and feel of your experience.</p>
+                    </div>
 
-            <div>
-                <h3>Password</h3>
-                <form>
-                    <label for="current-password">Current Password:</label><br>
-                    <input type="password" id="current-password"><br><br>
+                    <div class="settings-row">
 
-                    <label for="new-password">New Password:</label><br>
-                    <input type="password" id="new-password"><br><br>
+                        <div class="settings-info">
+                            <h3>Theme Mode</h3>
+                            <p>Choose between light mode and dark mode.</p>
+                        </div>
 
-                    <button type="submit">Update Password</button>
-                </form>
-            </div>
-        </div>
+                        <div class="btn-group">
+                            <button class="btn">Light Mode</button>
+                            <button class="btn btn-primary">Dark Mode</button>
+                        </div>
 
-        <div class="section">
-            <h2>Notifications</h2>
+                    </div>
 
-            <div>
-                <input type="checkbox" id="email-notifications">
-                <label for="email-notifications">Email Notifications</label>
-            </div>
+                </div>
+                <div class="section">
 
-            <div>
-                <input type="checkbox" id="sms-notifications">
-                <label for="sms-notifications">SMS Notifications</label>
-            </div>
+                    <div class="section-header">
+                        <h2>Profile Information</h2>
+                        <p>Update your personal information and account details.</p>
+                    </div>
 
-            <div>
-                <input type="checkbox" id="push-notifications">
-                <label for="push-notifications">Push Notifications</label>
-            </div>
-        </div>
+                    <form class="form-grid">
 
-        <div class="section">
-            <h2>Privacy Settings</h2>
+                        <div class="input-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" placeholder="Enter your name">
+                        </div>
 
-            <div>
-                <input type="checkbox" id="profile-visibility">
-                <label for="profile-visibility">Make profile public</label>
-            </div>
+                        <div class="input-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" placeholder="Enter your email">
+                        </div>
 
-            <div>
-                <input type="checkbox" id="data-sharing">
-                <label for="data-sharing">Allow data sharing for analytics</label>
-            </div>
-        </div>
+                        <div class="input-group full">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" placeholder="Update password">
+                        </div>
 
-        <div class="section">
-            <h2>Danger Zone</h2>
+                        <div class="input-group full">
+                            <button type="submit" class="btn btn-primary">
+                                Save Changes
+                            </button>
+                        </div>
 
-            <div>
-                <button class="deactivate">Deactivate Account</button>
-            </div>
+                    </form>
 
-            <div>
-                <button class="delete">Delete Account</button>
-            </div>
+                </div>
+                <div class="section">
+
+                    <div class="section-header">
+                        <h2>Notifications</h2>
+                        <p>Manage how you receive alerts and updates.</p>
+                    </div>
+
+                    <div class="settings-row">
+
+                        <div class="settings-info">
+                            <h3>Email Notifications</h3>
+                            <p>Receive updates directly through email.</p>
+                        </div>
+
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+
+                    </div>
+
+                    <div class="settings-row">
+
+                        <div class="settings-info">
+                            <h3>SMS Notifications</h3>
+                            <p>Get important alerts via text messages.</p>
+                        </div>
+
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider"></span>
+                        </label>
+
+                    </div>
+
+                    <div class="settings-row">
+
+                        <div class="settings-info">
+                            <h3>Push Notifications</h3>
+                            <p>Receive push notifications on your device.</p>
+                        </div>
+
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+
+                    </div>
+
+                </div>
+
+                <div class="section">
+
+                    <div class="section-header">
+                        <h2>Privacy Settings</h2>
+                        <p>Control your profile visibility and data preferences.</p>
+                    </div>
+
+                    <div class="settings-row">
+
+                        <div class="settings-info">
+                            <h3>Public Profile</h3>
+                            <p>Allow other users to view your profile.</p>
+                        </div>
+
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider"></span>
+                        </label>
+
+                    </div>
+
+                    <div class="settings-row">
+
+                        <div class="settings-info">
+                            <h3>Analytics Sharing</h3>
+                            <p>Help improve the platform through anonymous analytics.</p>
+                        </div>
+
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+
+                    </div>
+
+                </div>
+
+                <div class="section">
+
+                    <div class="section-header">
+                        <h2>Danger Zone</h2>
+                        <p>These actions are permanent and cannot be undone.</p>
+                    </div>
+
+                    <div class="settings-row">
+
+                        <div class="settings-info">
+                            <h3>Deactivate Account</h3>
+                            <p>Temporarily disable your account access.</p>
+                        </div>
+
+                        <button class="btn">
+                            Deactivate
+                        </button>
+
+                    </div>
+
+                    <div class="settings-row">
+
+                        <div class="settings-info">
+                            <h3>Delete Account</h3>
+                            <p>Permanently remove your account and all associated data.</p>
+                        </div>
+
+                        <button class="btn btn-danger">
+                            Delete Account
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
         </div>
 
     </main>
 
     <footer>
         <nav>
-            <a href="#">Privacy Policy</a> |
+            <a href="#">Privacy Policy</a>
             <a href="#">Terms of Service</a>
         </nav>
     </footer>

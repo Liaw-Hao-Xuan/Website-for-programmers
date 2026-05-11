@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Live Editor</title>
+
+    <link rel="stylesheet" href="python.css">
+
+    <!-- Pyodide (Python in browser) -->
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.25.1/full/pyodide.js"></script>
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            <img src="assets/testimage.png" width="56" height="41">
+        </div>
+
+        <div class="navitems">
+            <a href="#">Services</a>
+            <a href="#">About</a>
+            <a href="#">Settings</a>
+            <a href="#">Help</a>
+        </div>
+
+        <div class="search-wrapper">
+
+            <span class="icon">
+                <svg viewBox="0 0 24 24">
+                    <path d="M10 2a8 8 0 105.293 14.293l4.707 4.707 1.414-1.414-4.707-4.707A8 8 0 0010 2z"/>
+                </svg>
+            </span>
+
+            <input type="text" placeholder="Search...">
+
+        </div>
+
+    </nav>
+
+    <div class="main-layout">
+
+        <!-- OUTPUT -->
+        <div id="output">
+            <h2>Python Output</h2>
+            <pre id="outputText">Run Python code to see output...</pre>
+        </div>
+
+    </div>
+
+    <!-- FLOATING EDITOR -->
+    <div class="floating-code-container" id="floatingContainer">
+
+        <div class="floating-header" id="dragHeader">
+            <h3>Python Editor</h3>
+        </div>
+
+        <textarea id="pythonCode">print("Hello from Python!")</textarea>
+
+        <button id="runBtn">Run Code ▶</button>
+
+    </div>
+
+    <script src="python.js"></script>
+</body>
+</html>

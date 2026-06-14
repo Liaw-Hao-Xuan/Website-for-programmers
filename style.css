@@ -157,3 +157,8 @@ body{
     width: 24px;
     height: 24px;   
 }
+
+.footernav{
+    display: flex;
+    gap: 50px;
+}

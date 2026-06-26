@@ -90,32 +90,78 @@
             <div id="htmlPanel" class="floating-code-panel active">
 
 <textarea id="floatingHtml"><section class="monkey">
-    <h1>Johnathan is GAYYY!!!</h1>
-    <p>Stupid black monkey</p>
-</section></textarea>
+    <div class="clicker-game">
+
+        <h1>Clicker Game</h1>
+    
+        <h2>Score: <span id="score">0</span></h2>
+    
+        <img id="clickImage" src="assets/johnathan.jpeg">
+    
+    </div></textarea>
 
             </div>
             <div id="cssPanel" class="floating-code-panel">
 
 <textarea id="floatingCss">body{
     margin:0;
-    font-family:Arial, sans-serif;
+    font-family:Arial,sans-serif;
+    background:#1f1f1f;
+    color:white;
 }
 
-.monkey{
-    padding:60px;
-    text-align:center;
-    background:#f4f4f4;
+.clicker-game{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    padding:40px;
 }
 
 h1{
-    color:darkred;
-}</textarea>
+    margin-bottom:10px;
+}
+
+h2{
+    margin-bottom:20px;
+}
+
+#clickImage{
+    width:250px;
+    cursor:pointer;
+    user-select:none;
+    transition:transform .08s ease;
+}
+
+#clickImage:hover{
+    transform:scale(1.05);
+}
+
+#clickImage:active{
+    transform:scale(.92);
+
+    .glow {
+        filter: drop-shadow(0 0 10px gold)
+                drop-shadow(0 0 25px orange);
+        transform: scale(1.05);
+    }</textarea>
 
             </div>
             <div id="jsPanel" class="floating-code-panel">
 
-<textarea id="floatingJs">console.log("Live Preview Running");</textarea>
+<textarea id="floatingJs">let score = 0;
+
+    const image = document.getElementById("clickImage");
+    const scoreText = document.getElementById("score");
+    
+    image.onclick = function () {
+        score++;
+        scoreText.textContent = score;
+    
+        if (score >= 50) {
+            image.classList.add("glow");
+        }
+    };</textarea>
 
             </div>
 

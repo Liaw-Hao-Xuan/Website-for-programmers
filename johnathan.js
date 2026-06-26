@@ -12,32 +12,49 @@ const dragHeader = document.getElementById("dragHeader");
 const resizeHandle = document.getElementById("resizeHandle");
 
 // -------------------------
-// Run Code
+// RUN CODE (FIXED)
 // -------------------------
-
 function runCode() {
 
     const html = floatingHtml.value;
+    const css = floatingCss.value;
+    const js = floatingJs.value;
 
-    const css = `
-<style>
-${floatingCss.value}
-</style>
-`;
+    const iframe = document.createElement("iframe");
 
-    const js = `
+    iframe.style.width = "100%";
+    iframe.style.height = "100%";
+    iframe.style.border = "none";
+
+    websitePreview.innerHTML = "";
+    websitePreview.appendChild(iframe);
+
+    const doc = iframe.contentDocument || iframe.contentWindow.document;
+
+    doc.open();
+    doc.write(`<!DOCTYPE html>
+<html>
+<head>
+<style>${css}</style>
+</head>
+<body>
+
+${html}
+
 <script>
-${floatingJs.value}
+window.onload = function() {
+${js}
+};
 <\/script>
-`;
 
-    websitePreview.innerHTML = html + css + js;
+</body>
+</html>`);
+    doc.close();
 }
 
 // -------------------------
 // Tabs
 // -------------------------
-
 tabs.forEach(tab => {
 
     tab.addEventListener("click", () => {
@@ -58,9 +75,7 @@ tabs.forEach(tab => {
 // -------------------------
 // Drag Window
 // -------------------------
-
 let isDragging = false;
-
 let offsetX = 0;
 let offsetY = 0;
 
@@ -76,7 +91,6 @@ dragHeader.addEventListener("pointerdown", (e) => {
     offsetY = e.clientY - rect.top;
 
     dragHeader.setPointerCapture(e.pointerId);
-
     dragHeader.style.cursor = "grabbing";
 
     e.preventDefault();
@@ -110,7 +124,6 @@ function stopDragging(e) {
     isDragging = false;
 
     dragHeader.style.cursor = "grab";
-
     dragHeader.releasePointerCapture(e.pointerId);
 
 }
@@ -121,7 +134,6 @@ dragHeader.addEventListener("pointercancel", stopDragging);
 // -------------------------
 // Resize Window
 // -------------------------
-
 let isResizing = false;
 
 let startWidth = 0;
@@ -186,7 +198,6 @@ resizeHandle.addEventListener("pointercancel", stopResize);
 // -------------------------
 // Keep Window Inside Screen
 // -------------------------
-
 window.addEventListener("resize", () => {
 
     let left = floatingContainer.offsetLeft;
@@ -215,9 +226,7 @@ window.addEventListener("resize", () => {
 // -------------------------
 // Run Button
 // -------------------------
-
 runFloating.addEventListener("click", runCode);
 
 // Initial Preview
-
 runCode();

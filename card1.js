@@ -20,33 +20,37 @@ document.getElementById("resizeHandle");
 
 
 
-
-// =====================
+// =======================
 // RUN CODE
-// =====================
+// =======================
 
 function runCode(){
+
 
     const html = floatingHtml.value;
     const css = floatingCss.value;
     const js = floatingJs.value;
 
 
+
     const iframe = document.createElement("iframe");
 
 
-    iframe.style.width="100%";
-    iframe.style.height="100%";
-    iframe.style.border="0";
+    iframe.style.width = "100%";
+    iframe.style.height = "100%";
+    iframe.style.border = "0";
+
 
 
     websitePreview.innerHTML="";
+
     websitePreview.appendChild(iframe);
 
 
 
     const doc =
     iframe.contentWindow.document;
+
 
 
     doc.open();
@@ -77,7 +81,11 @@ ${html}
 
 <script>
 
+window.onload = function(){
+
 ${js}
+
+}
 
 <\/script>
 
@@ -86,53 +94,41 @@ ${js}
 
 </html>
 
+
 `);
 
 
     doc.close();
+
 
 }
 
 
 
 
+// =======================
+// TABS
+// =======================
 
-
-// =====================
-// FIXED TABS
-// =====================
 
 tabs.forEach(tab=>{
 
 
-    tab.addEventListener(
-    "pointerdown",
-    (e)=>{
-
-        // stop dragging from starting
-        e.stopPropagation();
-
-    });
+    tab.addEventListener("click",()=>{
 
 
-    tab.addEventListener(
-    "click",
-    ()=>{
+        tabs.forEach(t=>{
+            t.classList.remove("active");
+        });
 
 
-        tabs.forEach(t=>
-            t.classList.remove("active")
-        );
-
-
-        panels.forEach(p=>
-            p.classList.remove("active")
-        );
+        panels.forEach(p=>{
+            p.classList.remove("active");
+        });
 
 
 
         tab.classList.add("active");
-
 
 
         document
@@ -150,24 +146,26 @@ tabs.forEach(tab=>{
 
 
 
-
-// =====================
+// =======================
 // RUN BUTTON
-// =====================
-
-runFloating.onclick = runCode;
+// =======================
 
 
-
-
-
-
+runFloating.addEventListener(
+"click",
+runCode
+);
 
 
 
-// =====================
-// DRAG
-// =====================
+
+
+
+
+// =======================
+// DRAGGING
+// =======================
+
 
 let dragging=false;
 
@@ -181,18 +179,12 @@ dragHeader.addEventListener(
 (e)=>{
 
 
-    // do not drag when clicking buttons
-    if(e.target.closest(".editor-tab")){
-        return;
-    }
-
-
-
     dragging=true;
 
 
-    let rect =
+    const rect =
     floatingContainer.getBoundingClientRect();
+
 
 
     offsetX =
@@ -201,6 +193,7 @@ dragHeader.addEventListener(
 
     offsetY =
     e.clientY - rect.top;
+
 
 
     dragHeader.setPointerCapture(
@@ -219,50 +212,51 @@ dragHeader.addEventListener(
 (e)=>{
 
 
-if(!dragging)return;
+    if(!dragging)return;
 
 
 
-let x =
-e.clientX - offsetX;
+    let x =
+    e.clientX - offsetX;
 
 
-let y =
-e.clientY - offsetY;
-
-
-
-x=Math.max(
-0,
-Math.min(
-x,
-window.innerWidth -
-floatingContainer.offsetWidth
-)
-);
-
-
-y=Math.max(
-0,
-Math.min(
-y,
-window.innerHeight -
-floatingContainer.offsetHeight
-)
-);
+    let y =
+    e.clientY - offsetY;
 
 
 
-floatingContainer.style.left =
-x+"px";
+    x=Math.max(
+    0,
+    Math.min(
+    x,
+    window.innerWidth -
+    floatingContainer.offsetWidth
+    )
+    );
 
 
-floatingContainer.style.top =
-y+"px";
+
+    y=Math.max(
+    0,
+    Math.min(
+    y,
+    window.innerHeight -
+    floatingContainer.offsetHeight
+    )
+    );
 
 
-floatingContainer.style.right =
-"auto";
+
+    floatingContainer.style.left =
+    x+"px";
+
+
+    floatingContainer.style.top =
+    y+"px";
+
+
+    floatingContainer.style.right =
+    "auto";
 
 
 });
@@ -286,14 +280,13 @@ dragging=false;
 
 
 
-
-
-// =====================
+// =======================
 // RESIZE
-// =====================
+// =======================
 
 
 let resizing=false;
+
 
 let startX;
 let startY;
@@ -322,6 +315,7 @@ startH =
 floatingContainer.offsetHeight;
 
 
+
 resizeHandle.setPointerCapture(
 e.pointerId
 );
@@ -342,19 +336,25 @@ if(!resizing)return;
 
 
 
-floatingContainer.style.width =
-Math.max(
-280,
-startW+(e.clientX-startX)
-)+"px";
+let width =
+startW +
+(e.clientX-startX);
 
+
+
+let height =
+startH +
+(e.clientY-startY);
+
+
+
+floatingContainer.style.width =
+Math.max(280,width)+"px";
 
 
 floatingContainer.style.height =
-Math.max(
-250,
-startH+(e.clientY-startY)
-)+"px";
+Math.max(250,height)+"px";
+
 
 
 });
@@ -377,6 +377,10 @@ resizing=false;
 
 
 
+
+// =======================
 // START
+// =======================
+
 
 runCode();

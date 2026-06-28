@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Live Code Editor</title>
+
+    <link rel="stylesheet" href="card1.css">
+
+</head>
+
+<body>
+
+<nav class="navbar">
+
+    <a href="index.html">
+        <img src="assets/testimage.png" width="56" height="41">
+    </a>
+
+    <div class="navitems">
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="settings.html">Settings</a>
+        <a href="help.html">Help</a>
+    </div>
+
+</nav>
+
+
+<div class="main-layout">
+
+    <main id="websitePreview">
+        <h1>Live Preview</h1>
+    </main>
+
+</div>
+
+
+<!-- FLOATING EDITOR -->
+<div class="floating-code-container" id="floatingContainer">
+
+    <div class="floating-header">
+
+        <div class="drag-bar" id="dragHeader">
+            Drag Editor
+        </div>
+
+        <div class="editor-tabs">
+            <button class="editor-tab active" data-tab="htmlPanel">HTML</button>
+            <button class="editor-tab" data-tab="cssPanel">CSS</button>
+            <button class="editor-tab" data-tab="jsPanel">JS</button>
+        </div>
+
+    </div>
+
+
+    <div class="editor-scroll-area">
+
+        <!-- HTML -->
+        <div id="htmlPanel" class="floating-code-panel active">
+<textarea id="floatingHtml">
+<section class="clicker-game">
+
+    <h1>Clicker Game</h1>
+
+    <h2>Score: <span id="score">0</span></h2>
+
+    <div id="cookieWrapper">
+        <img id="clickImage" src="assets/cookie.webp">
+    </div>
+
+</section>
+</textarea>
+        </div>
+
+
+        <!-- CSS -->
+        <div id="cssPanel" class="floating-code-panel">
+<textarea id="floatingCss">
+body{
+    font-family:Arial;
+    background:#111;
+    color:white;
+    text-align:center;
+}
+
+#clickImage{
+    width:200px;
+    cursor:pointer;
+}
+
+#cookieWrapper{
+    display:inline-block;
+}
+
+.goldGlow{
+    animation: gold 1s infinite alternate;
+}
+
+.blueGlow{
+    animation: blue 1s infinite alternate;
+}
+
+@keyframes gold{
+from{
+filter: drop-shadow(0 0 10px gold);
+}
+to{
+filter: drop-shadow(0 0 60px orange);
+}
+}
+
+@keyframes blue{
+from{
+filter: drop-shadow(0 0 10px cyan);
+}
+to{
+filter: drop-shadow(0 0 60px blue);
+}
+}
+</textarea>
+        </div>
+
+
+        <!-- JS -->
+        <div id="jsPanel" class="floating-code-panel">
+<textarea id="floatingJs">
+let score = 0;
+
+const image = document.getElementById("clickImage");
+const scoreText = document.getElementById("score");
+const wrapper = document.getElementById("cookieWrapper");
+
+image.onclick = () => {
+
+    score++;
+
+    scoreText.textContent = score;
+
+    if(score >= 50){
+        wrapper.classList.add("goldGlow");
+    }
+
+    if(score >= 100){
+        wrapper.classList.remove("goldGlow");
+        wrapper.classList.add("blueGlow");
+    }
+
+};
+</textarea>
+        </div>
+
+    </div>
+
+    <button id="runFloating" class="run-button">Run ▶</button>
+
+    <div id="resizeHandle" class="resize-handle"></div>
+
+</div>
+
+
+<script src="card1.js"></script>
+
+</body>
+</html>

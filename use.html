@@ -36,173 +36,81 @@
 
     </nav>
 
-
-
-
-
 <div class="main-layout">
 
-
 <main id="websitePreview">
-
-
 <section>
 
 <h1>Live Website Preview</h1>
-
 <p>Your code output will appear here.</p>
 
 </section>
-
-
 </main>
-
-
 </div>
-
-
-
-
-
-
 
 <div class="floating-code-container" id="floatingContainer">
+    <div class="floating-header" id="dragHeader">
+        <div class="editor-tabs">
+
+            <button class="editor-tab active" data-tab="htmlPanel">
+            HTML
+            </button>
 
 
-
-<div class="floating-header" id="dragHeader">
-
-
-
-<div class="editor-tabs">
+            <button class="editor-tab" data-tab="cssPanel">
+            CSS
+            </button>
 
 
-<button class="editor-tab active" data-tab="htmlPanel">
-HTML
-</button>
+            <button class="editor-tab" data-tab="jsPanel">
+            JS
+            </button>
+
+        </div>
 
 
-<button class="editor-tab" data-tab="cssPanel">
-CSS
-</button>
-
-
-<button class="editor-tab" data-tab="jsPanel">
-JS
-</button>
-
-
-</div>
-
-
-</div>
-
-
-
-
-
-
+    </div>
 
 <div class="editor-scroll-area">
+    <div id="htmlPanel" class="floating-code-panel active">
+        <textarea id="floatingHtml">
+            <section class="hero">
 
+            <h1>Hello World</h1>
 
+            <p>Add anything here</p>
 
+            </section>
 
-
-<div id="htmlPanel" class="floating-code-panel active">
-
-
-<textarea id="floatingHtml">
-
-
-<section class="hero">
-
-<h1>Hello World</h1>
-
-<p>Add anything here</p>
-
-</section>
-
-
-</textarea>
-
-
-</div>
-
-
-
-
-
-
+        </textarea>
+    </div>
 
 <div id="cssPanel" class="floating-code-panel">
-
-
-<textarea id="floatingCss">
-
-
+    <textarea id="floatingCss">
 body{
-
 margin:0;
-
 font-family:Arial;
-
 }
-
-
 
 .hero{
-
 padding:60px;
-
 text-align:center;
-
 background:#f4f4f4;
-
 }
-
-
 
 h1{
-
 color:darkred;
-
 }
-
-
-</textarea>
-
-
+    </textarea>
 </div>
-
-
-
-
-
-
 
 <div id="jsPanel" class="floating-code-panel">
+    <textarea id="floatingJs">
 
+        console.log("Live Preview Running");
 
-<textarea id="floatingJs">
-
-
-console.log("Live Preview Running");
-
-
-</textarea>
-
-
+    </textarea>
 </div>
-
-
-
-</div>
-
-
-
-
-
 
 <button class="run-button" id="runFloating">
 
@@ -210,22 +118,9 @@ Run Code ▶
 
 </button>
 
-
-
-
-
 <div class="resize-handle" id="resizeHandle"></div>
 
-
-
-</div>
-
-
-
-
-
 <script src="script.js"></script>
-
 
 </body>
 

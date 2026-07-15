@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Live Code Editor</title>
+
+    <link rel="stylesheet" href="card2.css">
+
+</head>
+
+<body>
+
+<nav class="navbar">
+
+    <a href="index.html">
+        <img src="assets/testimage.png" width="56" height="41">
+    </a>
+
+    <div class="navitems">
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="settings.html">Settings</a>
+        <a href="help.html">Help</a>
+    </div>
+
+</nav>
+
+
+<div class="main-layout">
+
+    <main id="websitePreview">
+        <h1>Live Preview</h1>
+    </main>
+
+</div>
+
+
+<!-- FLOATING EDITOR -->
+<div class="floating-code-container" id="floatingContainer">
+
+    <div class="floating-header">
+
+        <div class="drag-bar" id="dragHeader">
+            Drag Editor
+        </div>
+
+        <div class="editor-tabs">
+            <button class="editor-tab active" data-tab="htmlPanel">HTML</button>
+            <button class="editor-tab" data-tab="cssPanel">CSS</button>
+            <button class="editor-tab" data-tab="jsPanel">JS</button>
+        </div>
+
+    </div>
+
+
+    <div class="editor-scroll-area">
+
+        <!-- HTML -->
+        <div id="htmlPanel" class="floating-code-panel active">
+<textarea id="floatingHtml">
+  <div class="carousel-wrapper">
+    <div class="carousel">
+      <div class="carousel-track" id="carouselTrack">
+        <article class="carousel-card">
+          <span class="tag">Design</span>
+          <h2>Responsive card layout</h2>
+          <p>Use this carousel to show featured cards, tutorial steps, or portfolio highlights. Each card stays centered and transitions smoothly.</p>
+        </article>
+        <article class="carousel-card">
+          <span class="tag">Development</span>
+          <h2>Interactive content flow</h2>
+          <p>Move through cards with previous/next controls or jump directly to a card using the dot indicators below.</p>
+        </article>
+        <article class="carousel-card">
+          <span class="tag">Deployment</span>
+          <h2>Live editor preview</h2>
+          <p>The carousel system is fully self-contained in this file and can be edited in the live editor for immediate results.</p>
+        </article>
+      </div>
+
+      <div class="carousel-controls">
+        <button id="prevButton" aria-label="Previous card">&larr;</button>
+        <button id="nextButton" aria-label="Next card">&rarr;</button>
+      </div>
+    </div>
+
+    <div class="carousel-dots" id="carouselDots"></div>
+  </div>
+</textarea>
+        </div>
+
+
+        <!-- CSS -->
+        <div id="cssPanel" class="floating-code-panel">
+<textarea id="floatingCss">
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f2f4f8;
+      color: #1f2937;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .carousel-wrapper {
+      width: min(100%, 960px);
+      padding: 24px;
+    }
+
+    .carousel {
+      position: relative;
+      overflow: hidden;
+      border-radius: 20px;
+      background: white;
+      box-shadow: 0 20px 40px rgba(15, 23, 42, 0.12);
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 0.35s ease-in-out;
+    }
+
+    .carousel-card {
+      min-width: 100%;
+      padding: 32px;
+      box-sizing: border-box;
+      position: relative;
+      perspective: 1200px;
+    }
+
+    .card-inner {
+      width: 100%;
+      height: 100%;
+      transition: transform 0.65s ease;
+      transform-style: preserve-3d;
+      position: relative;
+    }
+
+    .card-inner.is-flipped {
+      transform: rotateY(180deg);
+    }
+
+    .card-face {
+      position: absolute;
+      inset: 0;
+      backface-visibility: hidden;
+      border-radius: 20px;
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .card-front {
+      background: white;
+    }
+
+    .card-back {
+      background: #4338ca;
+      color: white;
+      transform: rotateY(180deg);
+    }
+
+    .carousel-card h2 {
+      margin: 0 0 16px;
+      font-size: 28px;
+      color: #111827;
+    }
+
+    .carousel-card p {
+      margin: 0 0 20px;
+      line-height: 1.7;
+      color: #4b5563;
+    }
+
+    .carousel-card .tag {
+      display: inline-block;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: #eef2ff;
+      color: #4338ca;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .carousel-controls {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+      pointer-events: none;
+    }
+
+    .carousel-controls button {
+      pointer-events: all;
+      border: none;
+      background: rgba(15, 23, 42, 0.8);
+      color: white;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    .carousel-controls button:hover {
+      background: rgba(15, 23, 42, 1);
+    }
+
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      padding: 18px 0;
+      background: #f8fafc;
+    }
+
+    .carousel-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #cbd5e1;
+      border: none;
+      cursor: pointer;
+    }
+
+    .carousel-dot.active {
+      background: #4338ca;
+    }
+</textarea>
+        </div>
+
+
+        <!-- JS -->
+        <div id="jsPanel" class="floating-code-panel">
+<textarea id="floatingJs">
+    const track = document.getElementById('carouselTrack');
+    const prevButton = document.getElementById('prevButton');
+    const nextButton = document.getElementById('nextButton');
+    const dotsContainer = document.getElementById('carouselDots');
+
+    const slides = Array.from(track.children);
+    let currentIndex = 0;
+
+    function updateCarousel() {
+      const offset = currentIndex * track.clientWidth * -1;
+      track.style.transform = `translateX(${offset}px)`;
+      Array.from(dotsContainer.children).forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentIndex);
+      });
+    }
+
+    function createDots() {
+      slides.forEach((_, index) => {
+        const dot = document.createElement('button');
+        dot.className = 'carousel-dot';
+        if (index === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => {
+          currentIndex = index;
+          updateCarousel();
+        });
+        dotsContainer.appendChild(dot);
+      });
+    }
+
+    slides.forEach(card => {
+      const inner = card.querySelector('.card-inner');
+      card.addEventListener('click', () => {
+        inner.classList.toggle('is-flipped');
+      });
+    });
+
+    prevButton.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+      updateCarousel();
+    });
+
+    nextButton.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % slides.length;
+      updateCarousel();
+    });
+
+    window.addEventListener('resize', updateCarousel);
+
+    createDots();
+    updateCarousel();
+</textarea>
+        </div>
+
+    </div>
+
+    <button id="runFloating" class="run-button">Run ▶</button>
+
+    <div id="resizeHandle" class="resize-handle"></div>
+
+</div>
+
+
+<script src="card2.js"></script>
+
+</body>
+</html>
